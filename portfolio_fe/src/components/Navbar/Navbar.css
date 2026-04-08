@@ -1,0 +1,116 @@
+.navbar {
+  position: fixed; /* Cố định trên cùng */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  z-index: 100; /* Đảm bảo luôn nằm trên các element khác */
+  box-sizing: border-box;
+  
+  /* Hiệu ứng kính mờ trong suốt */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- LOGO --- */
+.navbar__logo a {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+}
+
+.navbar__logo a:hover {
+  opacity: 0.8;
+}
+
+/* --- LINKS --- */
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(101, 40, 37, 0.7); /* Tone đỏ nâu giống trang Home */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: color 0.15s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Hiệu ứng gạch chân chạy ra khi hover */
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--text-primary);
+  transition: width 0.15s ease, left 0.15s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar__links a.active {
+  color: var(--text-primary, #3e000c);
+}
+
+.navbar__links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Thêm cuộn mượt cho toàn bộ trang web (bạn có thể bỏ cái này vào file index.css chung cũng được) */
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 24px;
+  }
+  
+  .navbar__links {
+    gap: 24px;
+  }
+  
+  .navbar__links a {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo a {
+    font-size: 28px;
+  }
+
+  /* Trên điện thoại dọc, tạm thời ẩn menu đi cho gọn. 
+     Sau này bạn có thể làm thêm Hamburger Menu icon ở đây */
+  .navbar__links {
+    display: none; 
+  }
+}

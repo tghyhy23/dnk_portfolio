@@ -1,0 +1,131 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  position: relative;
+  
+  /* background: var(--bg-splash); */
+}
+
+.hero {
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  color: var(--text);
+
+  opacity: 0;
+  animation: splashFadeIn 1.5s ease forwards;
+}
+
+/* Eyebrow */
+.hero__eyebrow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.hero__under {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hero__pill {
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1.8rem;   
+  word-spacing: 1.2rem;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 32px;
+  /* color: rgba(255, 236, 209, 0.68); màu trắng ngà be */
+  color: rgba(101, 40, 37, 0.68); /* màu đỏ nâu đậm */
+  /* color: rgba(62, 0, 12, 0.68); màu chocolate đỏ đô*/
+  /*  */
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+/* Title */
+.hero__title {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 135px;
+  line-height: 0.86;
+  letter-spacing: 0.04em;
+  /* text-shadow: 0 8px 30px rgba(255, 255, 255, 0.35); */
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes splashFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* Responsive cho Icon trên Mobile */
+
+@media (max-width: 768px) {
+
+  .splash-page {
+    padding: 24px;
+  }
+
+  .hero__eyebrow,
+  .hero__under {
+    justify-content: center;
+  }
+
+  .hero__pill {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    padding: 8px 14px;
+  }
+
+  .hero__title {
+    font-size: clamp(48px, 14vw, 90px);
+    line-height: 0.95;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__pill {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero__title {
+    font-size: clamp(40px, 14vw, 68px);
+  }
+}

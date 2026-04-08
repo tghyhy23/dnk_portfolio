@@ -1,0 +1,125 @@
+/* src/styles/base.css */
+:root {
+  --splash-bg-1: #faece3;
+  --splash-bg-2: #fff7fc;
+  --splash-bg-3: #fff6e9;
+  --text: #1f2937;
+  --muted-text: rgba(31, 41, 55, 0.55);
+  --pill-border: rgba(31, 41, 55, 0.12);
+  --pill-bg: rgba(255, 255, 255, 0.45);
+
+  /* --text-primary: #652825; */
+  --text-primary: #670626;
+  --text-secondary: #ffecd1;
+  /*  */
+  /* --bg-splash: #652825; */
+  --bg-splash: #670626;
+  --bg-about: #fff9f6;
+
+  --primary-color: #ffdda9;
+  --base-primary: rgba(115, 210, 145, 0.2);
+  --primary-hover: #e1fcf19d;
+  --bg-color: #fff;
+  --main-bg-color: #f0f2f5;
+  --sidebar-bg: #fff;
+  --sidebar-text: #12915A;
+  --sidebar-hover: #334155;
+  --white: #ffffff;
+  --border-color: #e5e7eb;
+  --super-admin: #CB30E0;
+  --admin: #357cfa;
+  --base-admin: rgb(53, 124, 250, 0.1);
+  --base-super-admin: rgb(203, 48, 224, 0.1);
+  --error: #dd2c2c;
+  --base-error: rgba(221, 44, 44, 0.1);
+  --warning: #ffb331; 
+  --base-warning: rgb(255, 179, 49, 0.1);
+  --edit: #357cfa;
+  --base-edit: rgb(53, 124, 250, 0.1);
+  --outline: #374151;
+  --base-outline: rgb(55, 65, 81, 0.1);
+  --inactive-bg: #f3f4f6;
+  --inactive-color: #4b5563;
+  --inactive-border: #d1d5db;
+  --gray100: #F2F2F7;
+  --gray200: #E5E5EA;
+  --gray300: #c8c8c8;
+  --gray400: #BDBDBD;
+  --gray500: #757575;
+  --gray800: #1C1C1E;
+  --overlay: rgba(28, 28, 30, 0.50);
+  --border: #BDBDBD;
+  /* =========================================
+     2. TYPOGRAPHY - SIZES (Kích thước chữ)
+     (Ánh xạ từ config Typography.size)
+     ========================================= */
+  --fs-xs: 12px;
+  --fs-s: 14px;
+  --fs-m: 16px;
+  --fs-ml: 18px;
+  --fs-l: 20px;
+  --fs-xl: 24px;
+  --fs-xxl: 32px;
+  --fs-3xl: 40px;
+  --fs-display: 48px;
+
+  /* =========================================
+     3. TYPOGRAPHY - WEIGHTS (Độ đậm nhạt)
+     (Ánh xạ từ config Typography.weight)
+     ========================================= */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* =========================================
+     4. BORDER RADIUS (Độ bo góc)
+     ========================================= */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-ml: 10px;
+  --radius-lg: 12px;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif; /* Hoặc font bạn chọn */
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  overflow-y: scroll; 
+  scroll-behavior: smooth; /* Hỗ trợ cuộn mượt khi click Navbar */
+}
+
+/* Fix lỗi nội dung bị đè bởi Navbar có position: fixed (nếu cần) */
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+  
+  /* Áp dụng background gradient của bạn vào đây */
+  background: linear-gradient(168deg, var(--splash-bg-1), var(--splash-bg-2), var(--splash-bg-3));
+  
+  /* Mẹo nhỏ: Giữ background cố định khi cuộn trang */
+  background-attachment: fixed; 
+  
+  /* Đảm bảo background bao phủ toàn bộ */
+  background-size: cover;
+  background-position: center;
+}
