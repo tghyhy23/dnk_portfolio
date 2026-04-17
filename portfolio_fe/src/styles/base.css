@@ -1,8 +1,8 @@
 /* src/styles/base.css */
 :root {
-  --splash-bg-1: #faece3;
+  --splash-bg-1: #fcf2ed;
   --splash-bg-2: #fff7fc;
-  --splash-bg-3: #fff6e9;
+  --splash-bg-3: #fff9f0;
   --text: #1f2937;
   --muted-text: rgba(31, 41, 55, 0.55);
   --pill-border: rgba(31, 41, 55, 0.12);
@@ -10,16 +10,16 @@
 
   /* --text-primary: #652825; */
   --text-primary: #670626;
+  --aa: rgb(103, 6, 38);
   --text-secondary: #ffecd1;
   /*  */
-  /* --bg-splash: #652825; */
-  --bg-splash: #670626;
+  /* --bg-color: #652825; */
+  --bg-color: #670626;
   --bg-about: #fff9f6;
 
   --primary-color: #ffdda9;
   --base-primary: rgba(115, 210, 145, 0.2);
   --primary-hover: #e1fcf19d;
-  --bg-color: #fff;
   --main-bg-color: #f0f2f5;
   --sidebar-bg: #fff;
   --sidebar-text: #12915A;
@@ -87,7 +87,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif; /* Hoặc font bạn chọn */
+  font-family: "Libre Baskerville", serif;
 }
 
 body {

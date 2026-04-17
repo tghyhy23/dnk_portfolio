@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./About.css";
 
 // TODO: Import ảnh của bạn ở đây. Ví dụ:
-// import profileImg from "../../assets/images/my-photo.jpg";
+import profileImg from "../../assets/images/hana_img.jpg";
+import AvatarCircular from "../../components/AvatarCircular/AvatarCircular";
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,14 +64,14 @@ function About() {
         {/* CỘT TRÁI: Hình ảnh (chiếm 1/3) */}
         <div className="about__image-wrapper">
           {/* Thay src bằng profileImg nếu bạn dùng import */}
-          <img src="https://via.placeholder.com/500x700" alt="Dao Ngoc Khanh" className="about__image" />
+          <AvatarCircular image={profileImg} alt="Dao Ngoc Khanh" />
         </div>
 
         {/* CỘT PHẢI: Nội dung (chiếm 2/3) - Xếp dọc 1 cột */}
         <div className="about__content">
           
           <div className="about__header">
-            <h2 className="about__title">about.</h2>
+            <h2 className="about__title">About me!</h2>
           </div>
 
           <div className="about__text">

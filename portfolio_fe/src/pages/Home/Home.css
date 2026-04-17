@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 3rem;
   position: relative;
   
   /* background: var(--bg-splash); */
@@ -28,28 +28,47 @@
   align-items: center;
   padding: 0;
   color: var(--text);
-
+  gap: 16px;
   opacity: 0;
   animation: splashFadeIn 1.5s ease forwards;
 }
 
-/* Eyebrow */
-.hero__eyebrow {
-  width: 100%;
+.hero__decoration {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.hero__decoration .line {
+  width: 450px;
+  height: 1.5px;
+  background: var(--text-primary);
+}
+
+.hero__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--text-primary);
+  animation: rotateSlow 8s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero__under {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-top: 18px;
+  /* gap: 12px; */
 }
 
 .hero__pill {
@@ -60,22 +79,21 @@
   padding: 6px 18px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 48px;
   /* color: rgba(255, 236, 209, 0.68); màu trắng ngà be */
   color: rgba(101, 40, 37, 0.68); /* màu đỏ nâu đậm */
   /* color: rgba(62, 0, 12, 0.68); màu chocolate đỏ đô*/
   /*  */
-  font-family: "Playfair Display", serif;
+  font-family: "Libre Baskerville", serif;
   font-style: italic;
 }
 
 /* Title */
 .hero__title {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  font-weight: 800;
+  font-family: "Bookmania W01 Bold It";
   color: var(--text-primary);
-  font-size: 135px;
+  font-size: 152px;
   line-height: 0.86;
   letter-spacing: 0.04em;
   /* text-shadow: 0 8px 30px rgba(255, 255, 255, 0.35); */
@@ -97,6 +115,10 @@
 /* Responsive cho Icon trên Mobile */
 
 @media (max-width: 768px) {
+
+  .hero__inner {
+    gap: 8px;
+  }
 
   .splash-page {
     padding: 24px;

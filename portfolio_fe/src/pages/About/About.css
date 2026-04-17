@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 3rem;
   position: relative;
   background: transparent;
 }
@@ -26,14 +26,14 @@
 .about__text {
   opacity: 0;
   transform: translateY(30px); /* Rút ngắn quãng đường lại một chút để trông thanh thoát hơn */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Dùng ease-out và tăng thời gian để kết thúc êm ái */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Dùng ease-out và tăng thời gian để kết thúc êm ái */
 }
 
 /* Dãn đều thời gian delay để tạo gợn sóng nhịp nhàng */
 .about__image-wrapper { transition-delay: 0.1s; }
 .about__header { transition-delay: 0.3s; }
 .about__text { transition-delay: 0.5s; }
-.about__btn { transition-delay: 0.7s; } 
+.about__btn { transition-delay: 1.8s; } 
 
 /* --- TRẠNG THÁI HIỂN THỊ KHI CUỘN TỚI --- */
 .about-page.is-visible .about__image-wrapper,
@@ -49,17 +49,13 @@
 .about__image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4; 
-  border-radius: 16px;
-  overflow: hidden;
-  border: 12px solid var(--text-primary); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  display: none;
 }
 
 /* --- CỘT PHẢI: NỘI DUNG 1 CỘT --- */
@@ -72,18 +68,20 @@
 .about__title {
   font-family: "Petit Formal Script", cursive;
   font-size: 80px;
-  font-weight: 800;
   color: var(--text-primary);
   margin: 0;
   line-height: 1;
 }
-
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
 .about__text p {
-  font-family: "Lora", serif;
-  font-size: 18px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
   line-height: 1.8;
   color: var(--text-primary);
-  margin: 0 0 16px 0;
 }
 
 .about__text strong {
@@ -97,14 +95,13 @@
   background-color: transparent;
   border: 1px solid var(--text-primary);
   border-radius: 999px;
-  font-family: "Lora", serif;
+  font-family: "Libre Baskerville", serif;
   font-size: 16px;
   color: var(--text-primary);
   cursor: pointer;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out, background-color 0.2s ease, color 0.2s ease;
-  margin-top: 8px;
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out, background-color 0.15s ease, color 0.15s ease;
 }
 
 .about__btn:hover {
@@ -205,9 +202,17 @@
   .about__title {
     font-size: 56px;
   }
+  
+  .about__content {
+    text-align: center;
+  }
 
   .about__text p {
     font-size: 16px;
+  }
+
+  .about__btn {
+    align-self: center;
   }
   
   .about__icon--star-1 {

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './styles/base.css';
 import Navbar from "./components/Navbar/Navbar";
 import MainPortfolio from "./MainPortfolio";
+import ExperienceDetail from "./pages/Experiences/ExperienceDetail";
+import ScrollToTop from "./utils/ScrollToTop";
 
 // Import các trang độc lập khác (nếu có sau này)
 // import Blog from "./pages/Blog/Blog"; 
@@ -12,6 +14,7 @@ import MainPortfolio from "./MainPortfolio";
 function App() {
   return (
     <Router>
+    <ScrollToTop />
       {/* Navbar nằm ngoài Routes để luôn hiển thị và không bị load lại khi chuyển route */}
       <Navbar />
       
@@ -20,10 +23,7 @@ function App() {
         <Routes>
           {/* Trang chủ: Chứa Home, About, Projects cuộn từ trên xuống */}
           <Route path="/" element={<MainPortfolio />} />
-          
-          {/* Các trang riêng biệt sau này (chuyển trang thực sự, không cuộn) */}
-          {/* <Route path="/blog" element={<Blog />} /> */}
-          {/* <Route path="/project/:id" element={<ProjectDetails />} /> */}
+          <Route path="/experience/:id" element={<ExperienceDetail />} />
         </Routes>
       </div>
     </Router>
