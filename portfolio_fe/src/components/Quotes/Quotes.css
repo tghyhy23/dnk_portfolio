@@ -1,18 +1,36 @@
 .quotes_container {
-  min-height: 30vh;
+  min-height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 20%;
-  margin: 5rem 0;
+  padding: 0 12% 40px 12%;
   text-align: center;
   position: relative;
-  background: var(--bg-color);
 }
 
 .quotes_content p {
-        font-size: 20px;
-        font-style: italic;
-        color: var(--text-secondary);
-        margin: 0;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.8; /* Thêm line-height cho chữ dễ đọc, giống trong hình */
+}
+
+.quotes-symbol {
+  font-size: 60px;
+  color: var(--text-primary);
+  
+  /* THÊM CÁC THUỘC TÍNH NÀY */
+  display: inline-block;
+  line-height: 0; /* Triệt tiêu chiều cao của ngoặc kép, giúp không bị giãn dòng */
+  transform: translateY(16px); /* Kéo ngoặc kép xích xuống một chút cho ngang tầm chữ, bạn có thể tăng/giảm số này tùy font chữ */
+}
+
+/* Tùy chọn: Khoảng cách nhẹ giữa dấu ngoặc và chữ */
+.quotes-symbol:first-child {
+  margin-right: 4px;
+}
+
+.quotes-symbol:last-child {
+  margin-left: 4px;
 }

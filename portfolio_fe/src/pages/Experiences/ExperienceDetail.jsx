@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import "./ExperienceDetail.css";
+import { ExperienceStats } from "../../components/ExperiencesStats/ExperienceStats";
+
 
 function ExperienceDetail() {
     const location = useLocation();
@@ -17,7 +20,7 @@ function ExperienceDetail() {
                     }
                 });
             },
-            { threshold: 0.1 }, // Hạ threshold xuống một chút để dễ kích hoạt hiệu ứng hơn trên màn hình dài
+            { threshold: 0.1 },
         );
 
         const currentRef = sectionRef.current;
@@ -32,7 +35,6 @@ function ExperienceDetail() {
         };
     }, []);
 
-    // Lấy dữ liệu item được truyền từ trang Experiences
     const experience = location.state?.experience;
 
     if (!experience) {
@@ -43,6 +45,9 @@ function ExperienceDetail() {
             </div>
         );
     }
+
+    // Lấy data stats từ mảng, hoặc dùng mặc định nếu mảng chưa có
+    const statsData = experience.stats;
 
     return (
         <div className={`exp-detail ${isVisible ? "is-visible" : ""}`} ref={sectionRef}>
@@ -70,6 +75,9 @@ function ExperienceDetail() {
                     </div>
                 </div>
             </section>
+
+            {/* Gọi Component Thống kê và truyền data xuống */}
+            <ExperienceStats statsData={statsData} />
 
         </div>
     );

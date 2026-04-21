@@ -4,8 +4,18 @@
   left: 0;
   width: 100%;
   z-index: 100;
+  /* Màu nền ở Top */
   background: linear-gradient(168deg, var(--splash-bg-1), var(--splash-bg-2), var(--splash-bg-3));
   padding: 15px 0;
+  
+  /* Thêm transition để lúc cuộn màu đổi mượt mà không bị giật cục */
+  transition: background-color 0.12s ease,
+}
+
+/* --- NAVBAR KHI CUỘN (SCROLLED) --- */
+.navbar.scrolled {
+  background: linear-gradient(168deg, var(--splash-bg-1), var(--splash-bg-2), var(--splash-bg-3));
+  padding: 15px 0; /* (Tùy chọn) Hơi thu nhỏ navbar lại một chút khi cuộn cho gọn */
 }
 
 .navbar__container {

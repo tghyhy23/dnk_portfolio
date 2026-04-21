@@ -6,15 +6,18 @@ import Quotes from "./components/Quotes/Quotes";
 import About from "./pages/About/About";
 import Experiences from "./pages/Experiences/Experiences";
 import Home from "./pages/Home/Home";
+import Skills from "./pages/Skills/Skills";
 
 function MainPortfolio() {
   return (
     <main className="main-portfolio">
       <Home />
-      
-      <About />
       <Quotes />
+      <About />
+      <Skills />
+      
       <Experiences />
+      
     </main>
   );
 }

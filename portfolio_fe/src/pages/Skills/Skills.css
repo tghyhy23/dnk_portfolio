@@ -1,0 +1,202 @@
+/* =========================================
+   BỐ CỤC CHUNG
+========================================= */
+.skills-section {
+    min-height: calc(100vh + 64px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 5rem 0;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skills-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-description {
+    flex: 1; /* Chiếm phần không gian linh hoạt */
+    max-width: 600px; /* Giới hạn độ rộng để chữ không bị kéo quá dài, dễ đọc hơn */
+}
+
+.skills-title {
+     font-style: italic;
+    font-family: "Petit Formal Script", cursive;
+    font-size: 80px;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.skills-description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-primary);
+    opacity: 0.8;
+    text-align: justify; /* Căn đều hai lề cho đoạn văn nhìn vuông vức giống sách */
+}
+
+/* =========================================
+   VÒNG TRÒN CHÍNH
+========================================= */
+.skills-container {
+    position: relative;
+    width: 530px;
+    height: 530px;
+}
+
+.skills-main-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--bg-color); /* Đường nét đứt */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+/* =========================================
+   NỘI DUNG Ở GIỮA (CENTER CONTENT)
+========================================= */
+.skills-center-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 68%;
+    text-align: center;
+    /* Hiệu ứng mờ dần khi thay đổi nội dung */
+    animation: fadeScale 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none; /* Tránh cản trở click chuột */
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.skills-center-content h3 {
+    font-family: "Petit Formal Script", cursive;
+    font-size: 32px;
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.skills-center-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* =========================================
+   CÁC HÌNH TRÒN NHỎ (SKILLS)
+========================================= */
+.skill-item {
+        color: var(--splash-bg-3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;  /* Tăng lên 90px */
+    height: 90px; /* Tăng lên 90px */
+    background: var(--item-circle);
+    border: 2px solid var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* Lùi về để tâm hình tròn nhỏ trùng với viền hình tròn lớn */
+    margin-top: -45px; /* Một nửa chiều cao */
+    margin-left: -45px; /* Một nửa chiều rộng */
+
+    /* PHÉP TOÁN THẦN THÁNH CHO 7 ITEMS:
+    Góc xoay = 360 độ / 7 item * index của nó (truyền từ React)
+    TranslateX(250px) = Đẩy ra một nửa chiều rộng vòng tròn lớn (Bán kính).
+    Rotate ngược lại để biểu tượng không bị nghiêng.
+  */
+    --angle: calc(360deg / 7 * var(--i));
+    transform: rotate(var(--angle)) translateX(265px) rotate(calc(var(--angle) * -1));
+}
+
+.skill-item:hover {
+    border-color: var(--bg-color);
+    /* box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2); */
+    transform: rotate(var(--angle)) translateX(265px) rotate(calc(var(--angle) * -1)) scale(1.15);
+}
+
+/* Trạng thái khi Skill đang được chọn */
+.skill-item.active {
+    background: var(--bg-color);
+    border-color: var(--bg-color);
+    color: var(--splash-bg-1);
+    transform: rotate(var(--angle)) translateX(265px) rotate(calc(var(--angle) * -1)) scale(1.2);
+    /* box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4); */
+    z-index: 10;
+}
+
+/* =========================================
+   RESPONSIVE CHO TABLET VÀ ĐIỆN THOẠI
+========================================= */
+
+/* Cho màn hình Tablet (Nhỏ hơn 1024px) */
+@media (max-width: 1024px) {
+    .skills-section {
+        padding: 5rem 5%;
+        gap: 20px;
+    }
+    
+    .skills-title {
+        font-size: 48px;
+    }
+}
+
+/* Cho màn hình Mobile (Nhỏ hơn 768px) */
+@media (max-width: 768px) {
+    .skills-section {
+        flex-direction: column; /* Quan trọng: Xếp chồng lên nhau (chữ trên, hình dưới) */
+        text-align: center; /* Căn giữa chữ */
+        padding: 4rem 20px;
+        gap: 60px;
+        justify-content: center;
+    }
+
+    .skills-description {
+        max-width: 100%;
+    }
+
+    .skills-description p {
+        text-align: center; /* Đổi lại căn giữa trên mobile cho dễ nhìn */
+    }
+
+    /* Thu nhỏ vòng tròn lớn trên mobile (Đã có từ các bước trước) */
+    .skills-container {
+        width: 300px;
+        height: 300px;
+        margin-right: 0; /* Reset lại margin nếu bạn có dùng hiệu ứng cắt viền */
+    }
+}

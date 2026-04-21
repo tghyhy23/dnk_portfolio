@@ -9,7 +9,12 @@ const experienceData = [
     role: "Event Host",
     year: "2023 - Present",
     companyName: "Boardgames",
-    details: "Chịu trách nhiệm chính trong việc lên kịch bản, dẫn dắt các buổi chơi game tương tác..."
+    details: "Chịu trách nhiệm chính trong việc lên kịch bản, dẫn dắt các buổi chơi game tương tác...",
+    stats: [
+        { id: 1, value: 150, label: "Stats", suffix: "+" },
+        { id: 2, value: 3000, label: "Stats", suffix: "+" },
+        { id: 3, value: 100, label: "Stats", suffix: "%" },
+    ]
   },
   {
     id: 2,
@@ -17,7 +22,12 @@ const experienceData = [
     role: "Event Support",
     year: "2022 - 2023",
     companyName: "NCT",
-    details: "Hỗ trợ đội ngũ sản xuất trong việc điều phối thiết bị..."
+    details: "Hỗ trợ đội ngũ sản xuất trong việc điều phối thiết bị...",
+    stats: [
+        { id: 1, value: 45, label: "Stats", suffix: "" },
+        { id: 2, value: 800, label: "Stats", suffix: "h" },
+        { id: 3, value: 0, label: "Stats", suffix: "" },
+    ]
   },
   {
     id: 3,
@@ -25,7 +35,12 @@ const experienceData = [
     role: "Project Assistant",
     year: "2021 - 2022",
     companyName: "Caravel",
-    details: "Làm việc trực tiếp với Giám đốc dự án để theo dõi KPI..."
+    details: "Làm việc trực tiếp với Giám đốc dự án để theo dõi KPI...",
+    stats: [
+        { id: 1, value: 12, label: "Stats", suffix: "" },
+        { id: 2, value: 95, label: "Stats", suffix: "%" },
+        { id: 3, value: 3, label: "Stats", suffix: "" },
+    ]
   },
   {
     id: 4,
@@ -33,7 +48,12 @@ const experienceData = [
     role: "Event Planner",
     year: "2020 - 2021",
     companyName: "Freelance",
-    details: "Nhận các dự án tiệc cưới, tiệc cuối năm độc lập..."
+    details: "Nhận các dự án tiệc cưới, tiệc cuối năm độc lập...",
+    stats: [
+        { id: 1, value: 20, label: "Stats", suffix: "+" },
+        { id: 2, value: 99, label: "Stats", suffix: "%" },
+        { id: 3, value: 50, label: "Stats", suffix: "+" },
+    ]
   },
   {
     id: 5,
@@ -41,7 +61,12 @@ const experienceData = [
     role: "Coordinator",
     year: "2019 - 2020",
     companyName: "JvenTech",
-    details: "Điều phối viên công nghệ cho sự kiện..."
+    details: "Điều phối viên công nghệ cho sự kiện...",
+    stats: [
+        { id: 1, value: 15, label: "Stats", suffix: "" },
+        { id: 2, value: 500, label: "Stats", suffix: "+" },
+        { id: 3, value: 120, label: "Stats", suffix: "h" },
+    ]
   },
 ];
 
@@ -133,7 +158,11 @@ function Experiences() {
   return (
     <section className={`experiences ${isVisible ? "is-visible" : ""}`} ref={sectionRef} id="experiences">
       <div className="experiences__header">
-        <h2 className="experiences__title">my experiences.</h2>
+        <h2 className="experiences__title">My Experiences.</h2>
+      </div>
+
+      <div className="experiences__desc">
+        <p>From coordinating small teams to managing large-scale events, each experience has shaped my mindset, sharpened my skills, and defined who I am today.</p>
       </div>
 
       <div className="carousel-wrapper">

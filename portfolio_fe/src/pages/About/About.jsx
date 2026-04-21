@@ -71,7 +71,7 @@ function About() {
         <div className="about__content">
           
           <div className="about__header">
-            <h2 className="about__title">About me!</h2>
+            <h2 className="about__title">About Me!</h2>
           </div>
 
           <div className="about__text">
